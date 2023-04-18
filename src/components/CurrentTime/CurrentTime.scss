@@ -1,0 +1,43 @@
+.time {
+    font-size: 100px;
+    width: 480px;
+    color: white;
+    position: fixed;
+    top: 60%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    font-weight:500;
+    z-index: 2;
+    background: transparent;
+    border: none;
+}
+.currentTime {
+    width: 100%;
+    display:flex ;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 35px;
+}
+.date {
+    margin-top: -10px;
+    font-size: 24px;
+}
+.context {
+    margin-top: 10px;
+    font-size: 15px;
+    font-style: italic;
+    font-weight:400;
+}
+.close {
+    height: 3px;
+    width: 14px;
+    background-color: white;
+    position: absolute;
+    top: 12px;
+    right:-30px;
+    cursor: pointer;
+}
+.close:hover {
+    opacity: 60%;
+}
