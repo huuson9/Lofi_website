@@ -1,4 +1,4 @@
-import { auth, provider } from '../../firebase';
+import { auth, provider } from "../../firebase";
 import {
   SET_USER,
   SET_MODE,
@@ -9,7 +9,7 @@ import {
   LIST_REMOVE,
   LIST_ADD_DONE,
   LIST_REMOVE_DONE,
-} from '../constantsType/actionType';
+} from "../constantsType/actionType";
 
 export const setUser = (payload) => ({
   type: SET_USER,
@@ -71,8 +71,8 @@ export function getUserAuth() {
 
 export function changeDayNight(currentStatus) {
   let status;
-  if (currentStatus === 'day') status = 'night';
-  else if (currentStatus === 'night') status = 'day';
+  if (currentStatus === "day") status = "night";
+  else if (currentStatus === "night") status = "day";
   return (dispatch) => {
     dispatch(setMode(status));
   };
@@ -80,8 +80,8 @@ export function changeDayNight(currentStatus) {
 
 export function changeRainStatus(currentStatus, value) {
   let rainStatus;
-  if (currentStatus === 'rain') rainStatus = 'clear';
-  else if (currentStatus === 'clear') rainStatus = 'rain';
+  if (currentStatus === "rain") rainStatus = "clear";
+  else if (currentStatus === "clear") rainStatus = "rain";
   return (dispatch) => {
     dispatch(setRain(rainStatus, value));
   };
@@ -109,7 +109,7 @@ export const addList = (name) => async (dispatch, getState) => {
   });
   // save to local storage as listItems
   localStorage.setItem(
-    'listItems',
+    "listItems",
     JSON.stringify(getState().todoItems.todoList)
   );
 };
@@ -120,7 +120,7 @@ export const removeList = (name) => async (dispatch, getState) => {
     payload: name,
   });
   localStorage.setItem(
-    'listItems',
+    "listItems",
     JSON.stringify(getState().todoItems.todoList)
   );
 };
@@ -134,7 +134,7 @@ export const addDone = (name) => async (dispatch, getState) => {
     },
   });
   localStorage.setItem(
-    'listItems',
+    "listItems",
     JSON.stringify(getState().todoItems.todoList)
   );
 };
@@ -148,7 +148,7 @@ export const removeDone = (name) => async (dispatch, getState) => {
     },
   });
   localStorage.setItem(
-    'listItems',
+    "listItems",
     JSON.stringify(getState().todoItems.todoList)
   );
 };

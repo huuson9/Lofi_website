@@ -47,3 +47,6 @@ ul {
 body {
   font-family: Arial, sans-serif;
 }
+body::-webkit-scrollbar {
+  display: none;
+}

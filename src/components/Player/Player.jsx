@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from "react";
 
-import { useSelector } from 'react-redux';
-import './Player.scss';
+import { useSelector } from "react-redux";
+import "./Player.scss";
 
 const Player = ({ currentSongIndex, setCurrentSongIndex, songs }) => {
   const data = useSelector((state) => state.volumeState);
@@ -46,21 +46,21 @@ const Player = ({ currentSongIndex, setCurrentSongIndex, songs }) => {
     }
   };
   return (
-    <div className='music-player'>
+    <div className="music-player">
       <audio loop src={songs[currentSongIndex].src} ref={audioElement}></audio>
-      <div className='music-player--controls'>
-        <button className='skip-btn' onClick={() => SkipSong(false)}>
-          <img src='/assets/icons/prev.svg' alt='' />
+      <div className="music-player--controls">
+        <button className="skip-btn" onClick={() => SkipSong(false)}>
+          <img src="/assets/icons/prev.svg" alt="" />
         </button>
-        <button className='play-btn' onClick={() => setIsPlaying(!isPlaying)}>
+        <button className="play-btn" onClick={() => setIsPlaying(!isPlaying)}>
           {isPlaying ? (
-            <img src='/assets/icons/pause.svg' alt='' />
+            <img src="/assets/icons/pause.svg" alt="" />
           ) : (
-            <img src='/assets/icons/play.svg' alt='' />
+            <img src="/assets/icons/play.svg" alt="" />
           )}
         </button>
-        <button className='skip-btn' onClick={() => SkipSong()}>
-          <img src='/assets/icons/next.svg' alt='' />
+        <button className="skip-btn" onClick={() => SkipSong()}>
+          <img src="/assets/icons/next.svg" alt="" />
         </button>
       </div>
     </div>

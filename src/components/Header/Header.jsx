@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 import { signOutAPI, changeDayNight } from "../../redux/actions";
@@ -6,9 +6,14 @@ import "./Header.scss";
 import { Link } from "react-router-dom";
 import DarkLightSwitch from "../DarkLightSwitch/DarkLightSwitch";
 import { create } from "@mui/material/styles/createTransitions";
+import Mute from "react-mute";
 import { CloseTimeContext } from "../../provider/CloseTimeProvider";
 const Header = () => {
   const { reverseClose } = useContext(CloseTimeContext);
+  const [muted, setMuted] = useState(true);
+  const handleMuteToggle = () => {
+    setMuted(!muted);
+  };
   let today = new Date();
   const [times, setTimes] = useState(today);
   useEffect(() => {
@@ -60,7 +65,6 @@ const Header = () => {
       }
     }
   };
-
   return (
     <nav className="wrap">
       <Link to="/">
@@ -74,7 +78,7 @@ const Header = () => {
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://github.com/phuclevinh2000/Lofi-website"
+          href="https://github.com/huuson9/Lofi_website"
         >
           <i className="fab fa-github"></i>
           <span>GitHub</span>
@@ -85,10 +89,20 @@ const Header = () => {
         <div className="time-btn" onClick={reverseClose}>
           {time}
         </div>
-        {/* {console.log(closes)} */}
         <div onClick={daynightHandler}>
           <DarkLightSwitch theme={mode} />
         </div>
+        {/* <Mute isMuted={muted} onToggle={setMuted(!muted)} /> */}
+        {/* <Mute
+          isMuted={muted}
+          onToggle={handleMuteToggle}
+          muteLabel="Turn off sound"
+          unmuteLabel="Turn on sound"
+          muteIcon={<i class="fa-solid fa-volume-xmark"></i>}
+        /> */}
+        {/* <div className="mute-btn" onClick={setMuted(!muted)}>
+          <i class="fa-solid fa-volume-xmark"></i>
+        </div> */}
         <button onClick={fullscreenHandler} className="fullscreen-btn">
           <i className="fas fa-expand fa-lg"></i>
         </button>

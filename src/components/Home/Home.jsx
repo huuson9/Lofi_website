@@ -6,7 +6,6 @@ import RainToggleButton from "../RainToggleButton/RainToggleButton";
 import ModifierBoard from "../ModifierBoard/ModifierBoard";
 import Footer from "../Footer/Footer";
 import { useTimer } from "react-timer-hook";
-import YoutubeVideo from "../YoutubeVideo/YoutubeVideo";
 import CurrentTime from "../CurrentTime/CurrentTime";
 
 const Home = () => {
@@ -26,7 +25,10 @@ const Home = () => {
   const { seconds, minutes, hours, isRunning, pause, resume, restart } =
     useTimer({
       expiryTimestamp,
-      onExpire: () => setTimerStart(false),
+      onExpire: () => {
+        setTimerStart(false);
+        // alert(1);
+      },
     });
 
   const setTimerHandler = (hour, minute, second) => {
@@ -47,7 +49,7 @@ const Home = () => {
         loop
         muted
       >
-        <source src="/assets/video/Night-clear.mp4" type="video/mp4" />
+        <source src="/assets/video/beach.mp4" type="video/mp4" />
       </video>
       <video
         className={combineMode === "night-rain" ? "videoIn" : "videoOut"}
@@ -87,7 +89,6 @@ const Home = () => {
         setTimerStart={setTimerStart}
         timerStart={timerStart}
       />
-      {/* <YoutubeVideo /> */}
       <Footer />
       <CurrentTime />
     </>
