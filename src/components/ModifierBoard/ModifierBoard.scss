@@ -16,6 +16,7 @@
   align-items: center;
   justify-content: space-around;
   transition: border-radius 0.1s ease-in-out;
+  height: auto;
 
   .modifier__icon {
     cursor: pointer;
@@ -27,12 +28,22 @@
       color: #f3a952;
     }
   }
-
   .modifier__icon:first-child {
     border: none;
   }
 }
-
+.searchYouTube {
+  position: absolute;
+  right: 900px;;
+}
+.scence_container {
+  position: absolute;
+  right: 120%;
+  top:-60%;
+  background-color: rgba(0, 0, 0,0.8);
+  color: white;
+  border-radius: 16px;
+}
 .modifier.mood {
   border-radius: 0 34px 34px 34px;
 }
@@ -43,7 +54,7 @@
 
 .modifierBox {
   position: absolute;
-  right: 100%;
+  right: 120%;
   top: -40%;
   background-color: rgba(0, 0, 0, 0.8);
   width: 370px;

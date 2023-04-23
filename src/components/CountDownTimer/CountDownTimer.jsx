@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import './CountDownTimer.scss';
-import TimerStyled from '../TimerStyled/TimerStyled';
+import React, { useState } from "react";
+import "./CountDownTimer.scss";
+import TimerStyled from "../TimerStyled/TimerStyled";
 
 const CountDownTimer = ({
   seconds,
@@ -23,36 +23,36 @@ const CountDownTimer = ({
   };
 
   return (
-    <div className='countdown'>
+    <div className="countdown">
       {timerStart ? (
-        <div className='countdownRunning'>
-          <div className='displayTime'>
+        <div className="countdownRunning">
+          <div className="displayTime">
             <TimerStyled seconds={seconds} minutes={minutes} hours={hours} />
           </div>
-          <div className='controller'>
+          <div className="controller">
             <button
-              className='buttonTimer'
+              className="buttonTimer"
               onClick={() => setTimerHandler(0, 0, 0)}
             >
               Cancel
             </button>
             {isRunning ? (
-              <button className='buttonTimer' onClick={pause}>
+              <button className="buttonTimer" onClick={pause}>
                 Pause
               </button>
             ) : (
-              <button className='buttonTimer' onClick={resume}>
+              <button className="buttonTimer" onClick={resume}>
                 Resume
               </button>
             )}
           </div>
         </div>
       ) : (
-        <div className='countdownNotRun'>
-          <div className='input'>
+        <div className="countdownNotRun">
+          <div className="input">
             <input
-              className='number-input'
-              type='number'
+              className="number-input"
+              type="number"
               value={hour}
               onChange={(e) => setHour(e.target.value)}
               max={24}
@@ -60,8 +60,8 @@ const CountDownTimer = ({
             />
             <span>hour</span>
             <input
-              className='number-input'
-              type='number'
+              className="number-input"
+              type="number"
               value={minute}
               onChange={(e) => setMinute(e.target.value)}
               max={60}
@@ -69,8 +69,8 @@ const CountDownTimer = ({
             />
             <span>min</span>
             <input
-              className='number-input'
-              type='number'
+              className="number-input"
+              type="number"
               value={second}
               onChange={(e) => setSecond(e.target.value)}
               max={60}
@@ -79,7 +79,7 @@ const CountDownTimer = ({
             <span>sec</span>
           </div>
 
-          <button className='buttonTimer setup' onClick={setTimerBtnHandler}>
+          <button className="buttonTimer setup" onClick={setTimerBtnHandler}>
             Set Timer
           </button>
         </div>

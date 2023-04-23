@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 
-import './RainToggleButton.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { changeRainStatus } from '../../redux/actions';
-import ReactAudioPlayer from 'react-audio-player';
+import "./RainToggleButton.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { changeRainStatus } from "../../redux/actions";
+import ReactAudioPlayer from "react-audio-player";
 
 const RainToggleButton = () => {
   const dispatch = useDispatch();
@@ -19,24 +19,19 @@ const RainToggleButton = () => {
   };
 
   return (
-    <div className='wrapper'>
+    <div className="wrapper">
       {buttonClick && (
         <ReactAudioPlayer
-          preload='auto'
+          preload="auto"
           autoPlay
-          src='./assets/musics/rain_city.mp3'
+          src="./assets/musics/rain_city.mp3"
           loop
           volume={rainValue / 100}
         />
       )}
-      <div
-        className='button'
-        onClick={rainButtonHandler}
-        // onMouseOver={}
-        // onMouseOut={MouseOut}
-      >
-        <div className='icon'>
-          <i className='fas fa-cloud-rain'></i>
+      <div className="button" onClick={rainButtonHandler}>
+        <div className="icon">
+          <i className="fas fa-cloud-rain"></i>
         </div>
       </div>
     </div>

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import './YoutubeVideo.scss';
-import ReactPlayer from 'react-player';
+import "./YoutubeVideo.scss";
+import ReactPlayer from "react-player";
 
 const YoutubeVideo = () => {
-  const [youtubeLink, setYoutubeLink] = useState('');
+  const [youtubeLink, setYoutubeLink] = useState("");
   const [submited, setSubmited] = useState(false);
 
   const changeYoutubeHandlder = (e) => {
@@ -17,12 +17,12 @@ const YoutubeVideo = () => {
   };
 
   return (
-    <div className='youtube'>
+    <div className="youtube">
       {submited && (
-        <div className='player'>
+        <div className="player">
           <ReactPlayer
-            width={'200px'}
-            height={'100px'}
+            width={"200px"}
+            height={"100px"}
             loop={true}
             controls={true}
             url={youtubeLink}
@@ -33,13 +33,13 @@ const YoutubeVideo = () => {
         </div>
       )}
       {!submited && (
-        <form onSubmit={submitYoutubeHandlder} className='input'>
+        <form onSubmit={submitYoutubeHandlder} className="input">
           <input
+            className="inputYouTube"
             value={youtubeLink}
             onChange={changeYoutubeHandlder}
-            placeholder='Youtube Music URL'
+            placeholder="Paste a YouTube video URL here and press enter"
           />
-          <button type='submit'>Submit</button>
         </form>
       )}
     </div>
