@@ -27,7 +27,6 @@ const Home = () => {
       expiryTimestamp,
       onExpire: () => {
         setTimerStart(false);
-        // alert(1);
       },
     });
 

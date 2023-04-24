@@ -5,6 +5,7 @@ import {
   SET_RAIN,
   SET_MOOD,
   SET_VOLUME,
+  SET_SCENCE,
   LIST_ADD,
   LIST_REMOVE,
   LIST_ADD_DONE,
@@ -37,6 +38,11 @@ export const setVolume = (payload) => ({
   volumeValue: payload,
 });
 
+export const setScence = (payload) => ({
+  type: SET_SCENCE,
+  scenceMood: payload,
+});
+
 export function signInAPI() {
   return (dispatch) => {
     auth
@@ -66,6 +72,16 @@ export function getUserAuth() {
         dispatch(setUser(user));
       }
     });
+  };
+}
+
+export function changeScence(currentStatus) {
+  let status = ["Home", "Caffe", "Exterior", "beach"];
+  status.map((item) => {
+    if (item !== currentStatus) item = false;
+  });
+  return (dispatch) => {
+    dispatch(setScence(status));
   };
 }
 

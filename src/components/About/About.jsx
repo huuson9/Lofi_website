@@ -14,7 +14,7 @@ const About = () => {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://github.com/phuclevinh2000/Lofi-website"
+            href="https://github.com/huuson9/Lofi_website"
           >
             <i className="fab fa-github"></i>
             <span>GitHub</span>
@@ -26,7 +26,6 @@ const About = () => {
         </div>
       </nav>
       <section className="description">
-        <h1>Welcome to the auto genrate lofi music made by Phuc Le.</h1>
         <h1>The purpose of this application is for learning</h1>
         <h1>This is a web application inspired by Lofi.co.</h1>
         <h1>
